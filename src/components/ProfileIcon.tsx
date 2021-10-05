@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { ProfileInformation } from './ProfileInformation'
-import { useAuth0 } from '@auth0/auth0-react';
+import {useAuth0} from "../utils/react-auth0-provider";
 
 export const ProfileIcon: React.FC = ({ children }) => {
   const [open, setOpen] = useState(false)
-  const { user } = useAuth0<{ name: string, picture: string }>();
+  const { user } = useAuth0();
   
   return (
     <>

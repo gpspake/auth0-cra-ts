@@ -17,7 +17,7 @@
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.0",
-    "axios": "^0.22.0",
+    "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "date-fns": "^2.24.0",
     "history": "^5.0.1",

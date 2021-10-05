@@ -5,12 +5,8 @@ import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 import { useDeleteTodoList, useFetchTodoLists } from '../utils/todo-hooks'
 import {TodoListLink} from "./TodoListLink";
-import { useAuth0 } from '@auth0/auth0-react';
 
 export const TodoLists = () => {
-
-  const { getAccessTokenSilently } = useAuth0();
-
 
   const {
     status: fetchTodoListsStatus,
