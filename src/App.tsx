@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
 import {Nav} from "./components/Nav";
-// import history from './utils/history'
 import './tailwind.generated.css'
 import {Main} from "./components/Main";
 import {useAuth0} from "./utils/react-auth0-provider";

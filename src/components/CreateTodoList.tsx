@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle, faList } from '@fortawesome/free-solid-svg-icons'
 import { format } from 'date-fns'
@@ -14,8 +14,8 @@ export const CreateTodoList = () => {
   const [newTodoList, setNewTodoList] = useState(
     { ...new TodoList(), name: format(new Date(), 'PPPP') }
   )
-  
-  const [redirectToList, setRedirectToList] = useState(0)
+
+  let history = useHistory();
 
   const { mutateAsync, status, data, error } = useAddTodoList()
   
@@ -25,7 +25,7 @@ export const CreateTodoList = () => {
       todoItems: [todoItem] 
     }).then(
       response => {
-        setRedirectToList(response.id)
+        history.push(`/todo/${response.id}`);
       }
     )
   }
@@ -36,8 +36,6 @@ export const CreateTodoList = () => {
   
   return (
     <>
-      {!!redirectToList && <Redirect to={`/todo/${redirectToList}`} />}
-      
       <Link className="block flex align-items-center mt-8" to="/">
         <span className="fa-layers fa-fw fa-3x block m-auto group">
           <FontAwesomeIcon
